@@ -1,8 +1,7 @@
-import ProgressIndicator from "./components/strategy/progress-indicator";
-import StrategyFlow from "./components/strategy/strtegy-flow";
+import ProgressIndicator from "@/app/components/strategy/progress-indicator";
+import StrategyFlow from "@/app/components/strategy/strtegy-flow";
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_API)
   return (
     <main>
       <ProgressIndicator />

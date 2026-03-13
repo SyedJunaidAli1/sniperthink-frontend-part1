@@ -18,5 +18,21 @@ export const steps = [
     id: 4,
     title: "Execution",
     description: "Deploy your strategy in live markets."
-  }
+  },
+  {
+    id: 5,
+    title: "dasd",
+    description: "dasda"
+  },
+  {
+    id: 6,
+    title: "",
+    description: ""
+  },
+  {
+    id: 7,
+    title: "",
+    description: ""
+  },
+  
 ]

@@ -7,8 +7,16 @@ export default function ProgressIndicator() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 h-1 bg-blue-500 origin-left"
-      style={{ scaleX: scrollYProgress }}
+      className="bg-primary"
+      style={{
+        scaleX: scrollYProgress,
+        originX: 0,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 10,
+      }}
     />
   );
 }
