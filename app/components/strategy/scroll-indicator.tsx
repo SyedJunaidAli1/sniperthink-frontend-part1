@@ -2,7 +2,7 @@
 
 import { motion, useScroll } from "framer-motion";
 
-export default function ProgressIndicator() {
+export default function ScrollIndicator() {
   const { scrollYProgress } = useScroll();
 
   return (
