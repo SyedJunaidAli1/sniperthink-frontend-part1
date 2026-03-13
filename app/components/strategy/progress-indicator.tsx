@@ -15,6 +15,7 @@ export default function ProgressIndicator() {
         top: 0,
         left: 0,
         right: 0,
+        zIndex: 50,
         height: 10,
       }}
     />

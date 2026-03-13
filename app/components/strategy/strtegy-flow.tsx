@@ -10,7 +10,7 @@ export default function StrategyFlow() {
        SniperThink Module part 1
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-12">
+      <div className="grid md:grid-cols-2 gap-12 px-2 lg:px-0">
         {steps.map((step) => (
           <StepCard key={step.id} step={step} />
         ))}
