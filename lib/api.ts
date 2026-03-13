@@ -7,3 +7,4 @@ const api = axios.create({
 export const sendInterest = async (data: any) => {
   return api.post("/interest", data);
 };
+

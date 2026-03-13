@@ -13,6 +13,7 @@ const animations = [
 
 export default function StepCard({ step, index }: any) {
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleInterest = async () => {
     setLoading(true);
@@ -24,7 +25,7 @@ export default function StepCard({ step, index }: any) {
         step: step.id,
       });
 
-      alert("Interest submitted successfully!");
+      setSuccess(true);
     } catch (err) {
       alert("Something went wrong");
     }
@@ -54,6 +55,9 @@ export default function StepCard({ step, index }: any) {
       >
         {loading ? "Sending..." : "I'm Interested"}
       </button>
+      {success && (
+        <p className="text-green-500 mt-2">Thanks! We'll contact you soon.</p>
+      )}
     </motion.div>
   );
 }
