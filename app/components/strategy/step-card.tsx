@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { sendInterest } from "@/lib/api";
 
-export default function StepCard({ step }: any) {
+const animations = [
+  { hidden: { opacity: 0, x: -80 }, visible: { opacity: 1, x: 0 } },
+  { hidden: { opacity: 0, x: 80 }, visible: { opacity: 1, x: 0 } },
+  { hidden: { opacity: 0, y: 80 }, visible: { opacity: 1, y: 0 } },
+  { hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } },
+];
+
+export default function StepCard({ step, index }: any) {
   const [loading, setLoading] = useState(false);
 
   const handleInterest = async () => {
@@ -25,14 +32,17 @@ export default function StepCard({ step }: any) {
     setLoading(false);
   };
 
+  const animation = animations[index % animations.length];
+
   return (
     <motion.div
       className="p-6 border rounded-xl shadow-sm"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.05 }}
+      variants={animation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      whileHover={{ scale: 1.05 }}
     >
       <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
 
